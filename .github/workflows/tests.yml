@@ -1,0 +1,44 @@
+name: tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ['3.10', '3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install test dependencies
+      run: |
+        python -m pip install --upgrade pip wheel
+    - name: Temporary installation
+      run: python -m pip install -e .[dev,test]
+    - name: Test with pytest
+      run: |
+        ipython -m pytest
+    - name: Check types with mypy
+      run: |
+        mypy ipython_markdown_inspector
+    - name: Build package
+      run: |
+        python -m build
+    - name: Install package
+      run: python -m pip install --find-links=dist --ignore-installed ipython_markdown_inspector
+    - name: Pip check
+      run: python -m pip check
+    - name: Publish builds
+      uses: actions/upload-artifact@v4
+      with:
+        name: ipython_markdown_inspector dist Python${{ matrix.python-version }} run ${{ github.run_number }}
+        path: ./dist

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ipython-markdown-inspector"
+version = "0.0.0"
+dependencies = [
+  "ipython>=8.21.0",
+  "docstring-to-markdown>=0.14.0,<1.0.0"
+]
+requires-python = ">=3.10"
+authors = [
+  {name = "Michał Krassowski"}
+]
+description = ""
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["IPython", "markdown", "inpsector", "docstring"]
+classifiers = [
+  "Framework :: IPython",
+  "Framework :: Jupyter",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.urls]
+Repository = "https://github.com/krassowski/ipython-markdown-inspector.git"
+"Bug Tracker" = "https://github.com/krassowski/ipython-markdown-inspector/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "mypy"
+]
+dev = [
+    "build",
+    "pre-commit",
+    "ruff==0.2.0"
+]
