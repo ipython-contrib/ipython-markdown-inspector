@@ -4,10 +4,10 @@
 ![CodeQL](https://github.com/krassowski/ipython-markdown-inspector/workflows/CodeQL/badge.svg)
 [![pypi-version](https://img.shields.io/pypi/v/ipython-markdown-inspector.svg)](https://python.org/pypi/ipython-markdown-inspector)
 
-IPython extension providing Inspection outputs as Markdown, enabling better integration with Jupyter Notebook and JupyterLab.
+IPython extension providing inspection results as Markdown, enabling better integration with Jupyter Notebook and JupyterLab.
 Depends on [`docstring-to-markdown`](https://github.com/python-lsp/docstring-to-markdown).
 
-![](https://raw.githubusercontent.com/krassowski/ipython-markdown-inspector/main/docs/demo.gif)
+![](https://raw.githubusercontent.com/krassowski/ipython-markdown-inspector/main/docs/demo.png)
 
 ## Installation
 
