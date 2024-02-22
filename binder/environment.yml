@@ -13,5 +13,4 @@ dependencies:
   #- notebook >=7.1
   - wheel
   - build
-  - pip:
-    - ipython >=8.22
+  - ipython >=8.22
