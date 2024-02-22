@@ -1,9 +1,9 @@
 from IPython.core.interactiveshell import InteractiveShell
+from IPython.core.oinspect import InspectorHookData
 from IPython import get_ipython
 import pytest
 
 from ipython_markdown_inspector.formatter import as_markdown
-from ipython_markdown_inspector._hook_data import InspectorHookData
 
 
 def simple_func(arg):

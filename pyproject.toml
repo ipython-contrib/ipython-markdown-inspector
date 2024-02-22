@@ -4,10 +4,10 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ipython-markdown-inspector"
-version = "0.0.0"
+version = "1.0.0"
 dependencies = [
-  "ipython>=8.21.0",
-  "docstring-to-markdown>=0.14.0,<1.0.0"
+  "ipython>=8.22.0",
+  "docstring-to-markdown>=0.15.0,<1.0.0"
 ]
 requires-python = ">=3.10"
 authors = [
