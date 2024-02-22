@@ -5,7 +5,7 @@ channels:
   - nodefaults
 
 dependencies:
-  - python =3.11
+  - python =3.10
   - pip
   - jupyterlab >=4.1
   - hatchling >=1.5.0
