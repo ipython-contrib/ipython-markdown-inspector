@@ -1,0 +1,17 @@
+name: ipython-markdown-inspector
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python =3.11
+  - pip
+  - jupyterlab >=4.1
+  - hatchling >=1.5.0
+  - ipykernel >=6.29
+  - notebook >=7.1
+  - wheel
+  - build
+  - pip:
+    - ipython >=8.22

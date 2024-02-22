@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source activate ${NB_PYTHON_PREFIX}
+
+pip install -v -e . --no-build-isolation
+
+mkdir -p ~/.ipython/profile_default/
+cp binder/ipython_config.py ~/.ipython/profile_default/

@@ -1,18 +1,8 @@
-from functools import partial
 from typing import List
 
 from IPython.core.interactiveshell import InteractiveShell
-from IPython.core.oinspect import InspectorHookData
 
 from .formatter import as_markdown
-
-
-def hook(
-    data: InspectorHookData,
-    *_,
-    ipython: InteractiveShell,
-) -> str:
-    return as_markdown(data)
 
 
 ORIGINAL_HOOK = None
@@ -21,7 +11,7 @@ ORIGINAL_HOOK = None
 def load_ipython_extension(ipython: InteractiveShell):
     global ORIGINAL_HOOK
     ORIGINAL_HOOK = ipython.inspector.mime_hooks.get("text/markdown", None)
-    ipython.inspector.mime_hooks["text/markdown"] = partial(hook, ipython=ipython)
+    ipython.inspector.mime_hooks["text/markdown"] = as_markdown
 
 
 def unload_ipython_extension(ipython: InteractiveShell):
