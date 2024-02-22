@@ -30,8 +30,8 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/krassowski/ipython-markdown-inspector.git"
-"Bug Tracker" = "https://github.com/krassowski/ipython-markdown-inspector/issues"
+Repository = "https://github.com/ipython-contrib/ipython-markdown-inspector.git"
+"Bug Tracker" = "https://github.com/ipython-contrib/ipython-markdown-inspector/issues"
 
 [project.optional-dependencies]
 test = [
