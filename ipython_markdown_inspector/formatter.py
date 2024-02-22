@@ -1,9 +1,8 @@
 from typing import Dict, List
 
 import docstring_to_markdown
-from IPython.core.oinspect import is_simple_callable
+from IPython.core.oinspect import is_simple_callable, InspectorHookData
 
-from ._hook_data import InspectorHookData
 from .models import Field, CodeField, DocField, RowField
 
 

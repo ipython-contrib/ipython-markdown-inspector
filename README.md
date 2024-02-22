@@ -11,7 +11,7 @@ Depends on [`docstring-to-markdown`](https://github.com/python-lsp/docstring-to-
 
 ## Installation
 
-Requires `IPython` 8.21 or newer (which requires Python 3.10 or newer).
+Requires `IPython` 8.22 or newer (which requires Python 3.10 or newer).
 
 ```bash
 pip install ipython-markdown-inspector
