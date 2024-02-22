@@ -1,1 +1,1 @@
-# c.InteractiveShellApp.extensions = ["ipython_markdown_inspector"]  # noqa: F821
+c.InteractiveShellApp.extensions = ["ipython_markdown_inspector"]  # noqa: F821
