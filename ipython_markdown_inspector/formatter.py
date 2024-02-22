@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import cast, Dict, List
 
 import docstring_to_markdown
 from IPython.core.oinspect import is_simple_callable, InspectorHookData
@@ -50,7 +50,7 @@ TABLE_STARTER = """\
 """
 
 
-def markdown_formatter(text: str):
+def markdown_formatter(text: str) -> str:
     try:
         converted = docstring_to_markdown.convert(text)
         return converted
@@ -58,7 +58,7 @@ def markdown_formatter(text: str):
         return f"<pre>{text}</pre>"
 
 
-def code_formatter(code, language="python"):
+def code_formatter(code: str, language="python") -> str:
     return f"```{language}\n{code}\n```"
 
 
@@ -96,8 +96,10 @@ def as_markdown(data: InspectorHookData) -> str:
                 chunks.append(TABLE_STARTER)
             chunks[-1] += f"\n| {field.label} | `{value}` |"
         if field.kind == "code":
-            chunks.append(f"#### {field.label}\n\n" + code_formatter(value))
+            chunks.append(f"#### {field.label}\n\n" + code_formatter(cast(str, value)))
         if field.kind == "doc":
-            chunks.append(f"#### {field.label}\n\n" + markdown_formatter(value))
+            chunks.append(
+                f"#### {field.label}\n\n" + markdown_formatter(cast(str, value))
+            )
 
     return "\n\n".join(chunks)
